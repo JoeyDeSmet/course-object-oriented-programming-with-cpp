@@ -265,14 +265,20 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 Mark the exercises using a ✅ once they are finished.
 
-### ❌ Wrong Input
+### ✅ Wrong Input
 
 *What happens when the user inputs something different than a number. For example a character `b` or a string `Hello`? Can you explain what happens? How can we detect this?*
+
+Nothing will happen.
 
 ```cpp
 cout << "Please enter a number: ";
 
 int number;
+do {
+  cin >> number;
+  condition = cin.fail();
+} while (condition)
 cin >> number;
 ```
 

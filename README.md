@@ -6,6 +6,8 @@ Welcome to the draft version of this Programming Course for VIVES University of 
 
 Comments and additions are more than welcome.
 
+[course deployment](https://cpp-joey.netlify.app)
+
 ## Starting
 
 Install npm modules

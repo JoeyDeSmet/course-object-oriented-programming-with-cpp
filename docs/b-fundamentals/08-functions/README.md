@@ -354,7 +354,7 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 Mark the exercises using a ✅ once they are finished.
 
-### ❌ Fail and Ignore
+### ✅ Fail and Ignore
 
 *The code snippet belows reads a number from the user between `1` and `10`. However if the user provides an unparsable value, such as a string, the application becomes unusable. Fix this by using the `cin` functions `fail()`, `clear()` and `ignore()`.*
 
@@ -365,19 +365,36 @@ using namespace std;
 
 int main() {
 
-  int number = 0;
-  do {
-    cout << "Please enter a number between 1 and 10: ";
+    int number = 0;
+    cout << "Please enter a number between 1 and 10: " << endl;
     cin >> number;
-  } while (number < 1 || number > 10);
+    while (true)
+    {
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(); // Must ignore otherwise will loop without stopping fo cin.
+            cout << "That is no number" << endl;
+            cout << "Please enter a number between 1 and 10: " << endl;
+            cin >> number;
+        }
+        else if (number < 1 || number > 10) {
+            cin.clear();
+            cout << "Thats not within the bounds" << endl;
+            cout << "Please enter a number between 1 and 10: " << endl;
+            cin >> number;
+        }
+        else break;
+    }
 
-  return 0;
+    return 0;
 }
 ```
 
-### ❌ Foreach
+### ✅ Foreach
 
 *What is wrong with the code below?*
+
+You cannot change values wile using foreach.
 
 ```cpp
 #include <iostream>
@@ -402,9 +419,11 @@ int main() {
 }
 ```
 
-### ❌ Sizeof Array
+### ✅ Sizeof Array
 
 *What is happening here? Why is the output of this code snippet wrong?*
+
+Sizeof values will return size of address of the array.
 
 ```cpp
 #include <iostream>
@@ -429,9 +448,11 @@ int main() {
 }
 ```
 
-### ❌ Changing Array Values
+### ✅ Changing Array Values
 
-*What is going on here? Why can the `mess_it_up` function change the values of the passed array?*
+*What is going on here? Why can't the `mess_it_up` function change the values of the passed array?*
+
+Because it is passed by value and not by refference.
 
 ```cpp
 #include <iostream>

@@ -279,10 +279,9 @@ do {
   cin >> number;
   condition = cin.fail();
 } while (condition)
-cin >> number;
 ```
 
-### ❌ Output Hexadecimal Value
+### ✅ Output Hexadecimal Value
 
 *Can you alter the next code snippet so the number is outputted in hexadecimal format, with a leading `0x` and a width of 4 hexadecimal digits? Note that this will require the `iomanip` library to be included (already done for you).*
 
@@ -294,7 +293,7 @@ using namespace std;
 
 int main() {
   int number = 23;
-  cout << "Number in hex format: " << number << endl;
+  cout << "Number in hex format: " << "0x" << setfil('0') << setw(2) << right << hex << number << endl;
 
   return 0;
 }

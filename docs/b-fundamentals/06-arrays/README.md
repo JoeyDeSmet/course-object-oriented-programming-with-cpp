@@ -320,7 +320,7 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 Mark the exercises using a ✅ once they are finished.
 
-### ❌ Day of the Week
+### ✅ Day of the Week
 
 *Refactor the following code snippet using an array of `std::string` elements and lookup the result.*
 
@@ -331,35 +331,24 @@ using namespace std;
 
 int main() {
 
+  std::string days[] = {
+    "Than it's Monday today",
+    "Than it's Tuesday today",
+    "Than it's Wednesday today",
+    "Than it's Thursday today",
+    "Than it's Friday today",
+    "Than it's Saturday today",
+    "Than it's Sunday today"
+  }
+
   unsigned int dayOfTheWeek = 0;
+
   do {
     cout << "Please enter the day of the week (1 - 7): ";
     cin >> dayOfTheWeek;
   } while (dayOfTheWeek < 1 || dayOfTheWeek > 7);
   
-  switch(dayOfTheWeek) {
-    case 1:
-      std::cout << "Than it's Monday today" << std::endl;
-      break;
-    case 2:
-      std::cout << "Than it's Tuesday today" << std::endl;
-      break;
-    case 3:
-      std::cout << "Than it's Wednesday today" << std::endl;
-      break;
-    case 4:
-      std::cout << "Than it's Thursday today" << std::endl;
-      break;
-    case 5:
-      std::cout << "Than it's Friday today" << std::endl;
-      break;
-    case 6:
-      std::cout << "Than it's Saturday today" << std::endl;
-      break;
-    case 7:
-      std::cout << "Than it's Sunday today" << std::endl;
-      break;
-  }
+  std::cout << days[dayOfTheWeek - 1] << std::endl;
 
   return 0;
 }
@@ -368,5 +357,35 @@ int main() {
 ### ❌ Matrix and Vector Multiplication
 
 *Check the vector and matrix multiplication below by writing a small application for it.*
+
+```cpp
+#include <iostream>
+#include <array>
+
+std::array<std::array<int, 3>, 3> matrixOne = {{
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+}};
+
+std::array<int, 3> matrixTwo = {2, 1, 3};
+
+int main() {
+
+    std::array<int, 3> result = {0};
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++){
+            result[i] += matrixTwo[i] * matrixOne[j][i];
+        }
+    }
+
+    for (int i = 0; i < 3; i++) {
+        std::cout << (int)result[i] << std::endl;
+    }
+
+    return 0;
+}
+```
 
 ![Matrix and Vector Multiplication](./img/matrix_vector_multiplication.png)

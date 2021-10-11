@@ -71,8 +71,8 @@ module.exports = {
         collapsable: false, // optional, defaults to true
         sidebarDepth: 1,    // optional, defaults to 1
         children: [
-          // TODO - Refactor !! '/e-compiling-and-linking/01-the-compilation-process/',
-          // TODO - Refactor !! '/e-compiling-and-linking/02-makefiles/',
+          '/e-compiling-and-linking/01-the-compilation-process/',
+          '/e-compiling-and-linking/02-makefiles/',
           // TODO - Refactor !! '/e-compiling-and-linking/03-libraries/'
         ]
       },
@@ -85,7 +85,7 @@ module.exports = {
           // '/f-more-advanced-cpp/01-references/',
           // TODO - Refactor !! '/f-more-advanced-cpp/01-pointers/',
           // TODO - Refactor !! '/f-more-advanced-cpp/02-exceptions/',
-          // TODO - Refactor !! '/f-more-advanced-cpp/03-file-streams/',
+          '/f-more-advanced-cpp/03-file-streams/',
           // TODO - Refactor !! '/f-more-advanced-cpp/04-dynamic-memory-allocation/',
           // '/f-more-advanced-cpp/05-standard-templating-libraries/',
           // '/f-more-advanced-cpp/06-smart-pointers/',

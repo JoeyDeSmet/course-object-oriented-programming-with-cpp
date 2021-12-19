@@ -512,7 +512,7 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 Mark the exercises using a ✅ once they are finished.
 
-### ❌ Move by delta
+### ✅ Move by delta
 
 Extend the `Point` class with a method `move_by(double deltaX, double deltaY)` that allows the user of a `Point` object to move the point using delta-coordinates.
 
@@ -527,6 +527,7 @@ namespace Geometry {
     // Methods
     public:
       void move_to(double x, double y);
+      void move_by(double deltaX, double deltaY);
 
     // Attributes (instance variables)
     private:
@@ -549,12 +550,16 @@ namespace Geometry {
     this->y = y;
   }
 
+  void Point::move_by(double deltaX, double deltaY) {
+    this->x += deltaX;
+    this->y += deltaY;
+  }
 };
 ```
 
 Basically the delta is added to the current coordinates making it move by delta.
 
-### ❌ Copying Objects
+### ✅ Copying Objects
 
 What would you expect to be the output of the following code? What happens when you create a second object and initialize it with the first?
 
@@ -591,3 +596,5 @@ int main() {
   return 0;
 }
 ```
+
+The second point is a deep copy of first.

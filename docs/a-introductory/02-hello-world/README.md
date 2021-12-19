@@ -234,32 +234,43 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 Mark the exercises using a ✅ once they are finished.
 
-### ❌ endl
+### ✅ endl
 
 *What does `std::endl` do? It is often found after outputting some information to the terminal. What is the difference with `"\n"`?*
 
-### ❌ Namespace std
+std::endl will cause a flush of the buffer.
+
+### ✅ Namespace std
 
 *Alter the hello world application by removing the statement `using namespace std;`. Fix the statements that fail by prefixing the required components with `std::`. Try to get the application to compile and run.*
 
 ```cpp
 #include <iostream>
 
-using namespace std;
-
 int main() {
   // Display Hello World! in the terminal
-  cout << "Hello World!" << endl;
+  std::cout << "Hello World!" << std::endl;
 
   return 0;
 }
 ```
 
-### ❌ Status Code
+### ✅ Status Code
 
 *Create a small C++ application that returns a value other than `0`. Typically a negative number is returned to indicate that something went wrong. Run that application using a terminal and show the status code.*
 
-### ❌ Personalized Output
+```cpp
+#include <iostream>
+
+int main() {
+
+  if (std::cin.getline() != "fail") return -1;
+
+  return 0;
+}
+```
+
+### ✅ Personalized Output
 
 *Alter the hello world application to output a personalized message. Try to output a text stating who made the application. Also state where you are currently following this course.*
 
@@ -270,7 +281,7 @@ using namespace std;
 
 int main() {
   // Display Hello World! in the terminal
-  cout << "Hello World!" << endl;
+  cout << "This application was made by Joey De Smet a studen of vives university" << endl;
 
   return 0;
 }

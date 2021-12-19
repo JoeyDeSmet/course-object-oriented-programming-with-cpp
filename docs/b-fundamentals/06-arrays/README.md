@@ -354,7 +354,7 @@ int main() {
 }
 ```
 
-### ❌ Matrix and Vector Multiplication
+### ✅ Matrix and Vector Multiplication
 
 *Check the vector and matrix multiplication below by writing a small application for it.*
 
